@@ -1,5 +1,10 @@
 package com.bycorp.Curso.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "usuarios")
 public class Usuario {
     private int id;
     private String nombre;
