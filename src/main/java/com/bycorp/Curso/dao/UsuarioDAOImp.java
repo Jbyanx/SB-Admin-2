@@ -6,7 +6,6 @@ import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -19,5 +18,16 @@ public class UsuarioDAOImp implements UsuarioDAO {
         String query = "FROM Usuario";
 
         return entityManager.createQuery(query).getResultList();
+    }
+
+    @Override
+    public void eliminar(int id) {
+        Usuario usuario = entityManager.find(Usuario.class, id);
+        entityManager.remove(usuario);
+    }
+
+    @Override
+    public void registrar(Usuario usuario) {
+
     }
 }
